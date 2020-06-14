@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 3,
+  "containerDefinitions":[
+    {
+      "name": "client",
+      "image": "sharangouda/docker-fib-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "sharangouda/docker-fib-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "sharangouda/docker-fib-worker",
+      "hostname": "worker",
+      "essential": false
+    },
+    {
+      "name": "ngnix",
+      "image": "sharangouda/docker-fib-ngnix",
+      "hostname": "ngnix",
+      "essential": true,
+      "portMappings": [
+        {
+          hostPort: "80",
+          containerPort: "80"
+        }
+      ],
+      "links": ["client","server"]
+    }
+  ]
+}

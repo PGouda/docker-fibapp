@@ -23,3 +23,15 @@ after_success:
   - docker push sharangouda/docker-fib-server 
   - docker push sharangouda/docker-fib-worker 
   - docker push sharangouda/docker-fib-ngnix 
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker-fibapp"
+  env: "DockerFibapp-env"
+  bucket_name: "elasticbeanstalk-us-east-1-158213498601"
+  bucket_path: "docker-fibapp"
+  on:
+    branch: master
+  access_key_id: $AWS_FIBAPP_DEPLOY_KEY
+  secret_access_key: $AWS_FIBAPP_DEPLOY_SEC
