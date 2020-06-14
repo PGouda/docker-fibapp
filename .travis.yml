@@ -4,10 +4,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t sharangouda/docker-fib -f ./client/Dockerfile.dev ./client
+  - docker build -t sharangouda/docker-fib-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true sharangouda/react-fib npm run test
+  - docker run -e CI=true sharangouda/docker-fib-test npm run test
 
 after_success:
   - docker build -t sharangouda/docker-fib-client ./client
