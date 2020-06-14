@@ -11,7 +11,7 @@
     {
       "name": "server",
       "image": "sharangouda/docker-fib-server",
-      "hostname": "api",
+      "hostname": "react-app",
       "essential": false,
       "memory": 128
     },
