@@ -19,7 +19,7 @@ after_success:
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Push to docker hub
-  - dcoker push sharangouda/docker-fib-client 
-  - dcoker push sharangouda/docker-fib-server 
-  - dcoker push sharangouda/docker-fib-worker 
-  - dcoker push sharangouda/docker-fib-ngnix 
+  - docker push sharangouda/docker-fib-client 
+  - docker push sharangouda/docker-fib-server 
+  - docker push sharangouda/docker-fib-worker 
+  - docker push sharangouda/docker-fib-ngnix 
