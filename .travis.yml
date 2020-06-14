@@ -16,10 +16,10 @@ after_success:
   - docker build -t sharangouda/docker-fib-ngnix ./ngnix
 
 #Login to docker CLI
-- echo "DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Push to docker hub
-- dcoker push sharangouda/docker-fib-client 
-- dcoker push sharangouda/docker-fib-server 
-- dcoker push sharangouda/docker-fib-worker 
-- dcoker push sharangouda/docker-fib-ngnix 
+  - dcoker push sharangouda/docker-fib-client 
+  - dcoker push sharangouda/docker-fib-server 
+  - dcoker push sharangouda/docker-fib-worker 
+  - dcoker push sharangouda/docker-fib-ngnix 
