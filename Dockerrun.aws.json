@@ -6,14 +6,24 @@
       "image": "sharangouda/docker-fib-client",
       "hostname": "client",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "portMappings": [
+        {
+          "containerPort": "3000"
+        }
+      ]
     },
     {
       "name": "server",
       "image": "sharangouda/docker-fib-server",
       "hostname": "react-app",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "portMappings": [
+        {
+          "containerPort": "5000"
+        }
+      ]
     },
     {
       "name": "worker",
